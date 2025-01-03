@@ -1,16 +1,28 @@
 function Main(){
     return(
         <main>
-            <div>
-                <img src="" alt="Hound intro image"></img>
-                <button>Buy</button>
+            <div className="image_container">
+                <img className="intro_image" src="src/assets/images/hound-intro.jpg" alt="Hound intro image"></img>
+                <button className="buy_button">Buy</button>
             </div>
 
-            <div>
-                <h1>We Do It Better</h1>
-                <img src="" alt="Slider image 1"></img>
-                <img src="" alt="Slider image 2"></img>
-                <img src="" alt="Slider image 3"></img>
+            <div className="banner">
+                <div className = "slider" style={{'--quantity': '10'}}>
+                    <div className="item" style={{'--position': '1'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '2'}}><img src = "src/assets/images/model2.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '3'}}><img src = "src/assets/images/model3.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '4'}}><img src = "src/assets/images/model4.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '5'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '6'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '7'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '8'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '9'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '10'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
+                </div>
+                <div className="content">
+                    <div className="mainmodel"><img src = "src/assets/images/mainmodel.png"></img></div>
+                </div>
+
             </div>
 
             <div>

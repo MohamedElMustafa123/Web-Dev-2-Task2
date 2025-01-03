@@ -1,18 +1,21 @@
-function Header(){
-    return(
+function Header() {
+    return (
         <header>
-            <h1>Hound</h1>
-            <nav>
-                <ul>
-                    <li><a href = "#">Home</a></li>
-                    <li><a href = "#">About</a></li>
-                    <li><a href = "#">Contact</a></li>
-                </ul>
+            <nav className="navbar">
+                <div className="navbar_left">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div className="navbar_center">
+                    <img className="navbar_logo" src="src/assets/images/hound-logo.png" alt="Hound logo" />
+                </div>
+                <div className="navbar_right">
+                    <span>United Arab Emirates | AED</span>
+                </div>
             </nav>
-            <p>United Arab Emirates | AED </p>
         </header>
     );
-
 }
 
-export default Header
+export default Header;

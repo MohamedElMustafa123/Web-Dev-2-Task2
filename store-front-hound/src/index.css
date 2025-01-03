@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: black;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar_left, .navbar_right{
+    display: flex;
+    align-items: center;
+}
+
+.navbar_left a, .navbar_right span{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.navbar_center{
+    flex: 1;
+    text-align: center;
+}
+
+.navbar_logo{
+    width: 120px;
+    height: auto;
+}
+
+.image_container{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 250px;
+}
+
+main{
+    background-color: black;
+}
+
+.intro_image{
+    width: 100%;
+    height: auto;
+}
+
+.buy_button{
+    position: absolute; 
+    top: 80%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    padding: 20px 40px;
+    background-color: black; 
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.3s; /* Smoothly move button on hover */
+}
+
+.buy_button:hover{
+    transform: translateX(-50%) translateY(-5px); /* Move button up slightly on hover */
+}
+
+
+h1{
+    color: white;
+}
+
+.banner{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 500px;
+}
+
+.banner .content{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(70%);
+    padding-bottom: 100px;
+}
+
+
+
+.banner .content .mainmodel img{
+    width: 100%;
+    height:auto;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+
+.banner .slider{
+    position: relative; 
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+
+/*to compelete a full circle. the rotatex controls the prespective from the front, so if you put a postive number you will be seeing the images
+from the bottom and if you put a negative number you will be seeing it from up above*/
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-17deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-17deg) rotateY(360deg);
+    }
+}
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(550px);
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 1025px){
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+}
+
+@media (max-width: 767px){
+
+}
