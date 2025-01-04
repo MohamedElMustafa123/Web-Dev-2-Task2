@@ -1,6 +1,8 @@
+// Header component of the website, containing the navigation bar, logo, and location.
 function Header() {
     return (
         <header>
+            {/* nav bar*/}
             <nav className="navbar">
                 <div className="navbar_left">
                     <a href="#">Home</a>
@@ -8,7 +10,7 @@ function Header() {
                     <a href="#">Contact</a>
                 </div>
                 <div className="navbar_center">
-                    <img className="navbar_logo" src="src/assets/images/hound-logo.png" alt="Hound logo" />
+                    <img className="navbar_logo" src="src/assets/images/hound-logo.png" alt="Hound logo"/>
                 </div>
                 <div className="navbar_right">
                     <span>United Arab Emirates | AED</span>

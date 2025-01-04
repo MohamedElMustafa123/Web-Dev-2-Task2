@@ -1,25 +1,38 @@
+/*To use custom font Chomsky*/
+@font-face {
+    font-family: 'Chomsky';
+    src: url(../src/assets/fonts/Chomsky.otf);
+}
+
+/*Reseting margin, padding and box sizing*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*header color set to black*/
 header{
     background-color: black;
 }
 
+/*nav bar styling*/
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    padding: 0 20px;
+    font-family: 'Roboto';
 }
 
+/*navbr sections, left and right.*/
 .navbar_left, .navbar_right{
     display: flex;
     align-items: center;
 }
 
+/*Styling these sections*/
 .navbar_left a, .navbar_right span{
     color: white;
     text-decoration: none;
@@ -27,32 +40,59 @@ nav{
     font-size: 16px;
 }
 
+/*Centering the logo*/
 .navbar_center{
     flex: 1;
     text-align: center;
 }
 
+/*Logo dimensions*/
 .navbar_logo{
     width: 120px;
     height: auto;
 }
 
+
+/*on hover, left links turn grey*/
+.navbar_left a:hover{
+    color: grey; 
+}
+
+
+/*positioning of image container that holds the intro image*/
 .image_container{
     position: relative;
     display: inline-block;
     margin-bottom: 250px;
 }
 
+/*color of the main section is set to black*/
 main{
     background-color: black;
 }
 
+/*animation setup for the headings throught the website*/
+.heading{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.9s ease;
+}
+
+/* when heading is visible it goes to its original postion and opacity is set to 1*/
+.heading.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*intro image styling*/
 .intro_image{
     width: 100%;
     height: auto;
 }
 
+/*buy button styling in the intro section of the website*/
 .buy_button{
+    font-family: 'Roboto';
     position: absolute; 
     top: 80%; 
     left: 50%; 
@@ -65,39 +105,49 @@ main{
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: transform 0.3s; /* Smoothly move button on hover */
+    transition: transform 0.6s; /* Add a smooth animation on hover */
 }
 
 .buy_button:hover{
-    transform: translateX(-50%) translateY(-5px); /* Move button up slightly on hover */
+    transform: translateX(-50%) translateY(-15px); /* Move button up slightly on hover */
 }
 
-
+/*general styling for all h1 in the website*/
 h1{
     color: white;
+    font-family: "Chomsky";
 }
 
+/*banner heading positioning*/
+.banner_heading{
+    text-align: center;
+    margin-top: -160px;
+    font-size: 60px;
+}
+
+/*banner styling*/
 .banner{
     width: 100%;
     height: 100%;
     text-align: center;
     position: relative;
     overflow: visible;
-    margin-bottom: 500px;
+    margin-bottom: 450px;
+    margin-top: 120px;
 }
-
+/*banner content styling*/
 .banner .content{
     position: absolute;
     left: 50%;
     bottom: 0;
-    transform: translateX(-50%) translateY(70%);
+    transform: translateX(-60%) translateY(70%);
     padding-bottom: 100px;
 }
 
 
-
+/*main model image styling within the banner*/
 .banner .content .mainmodel img{
-    width: 100%;
+    width: 120%;
     height:auto;
     bottom: 0;
     left: 0;
@@ -106,20 +156,21 @@ h1{
     background-position: top center;
     z-index: 1;
 }
-
+/*slider styling within the banner*/
 .banner .slider{
     position: relative; 
     width: 200px;
     height: 250px;
     top: 10%;
     left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    transform-style: preserve-3d;/*preserves 3D trnasformations for child elements so they can be seen in 3D space*/
+    transform: perspective(1000px);/*controls the depth of the 3d effect*/
     animation: autoRun 20s linear infinite;
     z-index: 2;
 }
 
-/*to compelete a full circle. the rotatex controls the prespective from the front, so if you put a postive number you will be seeing the images
+/*to compelete a full circle we set rotateY from 0 to 360. the rotateX controls the prespective from the front,
+ so if you put a postive number you will be seeing the images
 from the bottom and if you put a negative number you will be seeing it from up above*/
 @keyframes autoRun{
     from{
@@ -128,26 +179,284 @@ from the bottom and if you put a negative number you will be seeing it from up a
         transform: perspective(1000px) rotateX(-17deg) rotateY(360deg);
     }
 }
+
+
 .banner .slider .item{
     position: absolute;
     inset: 0 0 0 0;
-    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(550px);
+    /*this calculation rotates the item around the Y axis based on its position in the sequence*/
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+    /*moves the item in the Z axis*/
+    translateZ(550px);
 }
 
+/*image size controlled here*/
 .banner .slider .item img{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
 }
 
-@media (min-width: 1025px){
+/*buy now heading*/
+.buy_now{
+    text-align: center;
+    font-size: 50px;
+}
+
+/*product section styling*/
+.products{
+    display: flex;
+    justify-content: center;;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    gap: 20px;
+    padding: 0 40px;
+}
+
+.prouduct{
+    width: 200px;
+    text-align: center;
+}
+
+/*product image sizing*/
+.product img{
+    width: 100%;
+    height: auto;
+}
+
+/*product description styling*/
+.desc{
+    font-family: 'Roboto';
+    color: white;
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/*the buy now button underneath the product styling*/
+.buy_now_product_button{
+    border-radius: 18px;
+    font-family: 'Roboto';
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.6s ease, color 0.6s ease;/*smooth transition added that changes the bg color and the text color of the button*/
+}
+
+/*on hover effect*/
+.buy_now_product_button:hover{
+    background-color: white;
+    color: black;
+}
+
+/*unbound section styling*/
+.unbound{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px auto;
+    gap: 30px;
+    max-width: 900px;
+    text-align: left;
+}
+
+.unbound_text{
+    flex: 1;
+}
+
+/*heading styling in the unbound section*/
+.unbound_text h1{
+    font-size: 60px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/*p styling in the unbound section*/
+.unbound_text p{
+    color: white;
+    font-size: 18px;
+    font-family:'Roboto' ;
 
 }
 
+/*unbound image positioning */
+.unbound_image{
+    flex: 1;
+    text-align: center;
+}
+
+/*unbound image sizing*/
+.unbound_image img{
+    width: 80%;
+    height: auto;
+
+}
+
+
+/*footer styling*/
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: -22px;
+}
+
+/*footer brand (hound) styling*/
+.footer_brand{
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    font-family: 'Chomsky';
+    color: white;
+    margin-bottom: 20px;
+}
+
+/*social media icons positioning*/
+.socials{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.socials li {
+    display: inline-block;
+}
+
+/*social icons styling and on hover animation*/
+.socials a{
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.6s ease;
+
+}
+
+/*on hover animation*/
+.socials a:hover {
+    color: red;
+}
+
+/*p styling within the footer*/
+footer p {
+    font-family: "Roboto";
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/*tablet screen styling*/
 @media (min-width: 768px) and (max-width: 1024px){
-
+    /*unbound section width is changed to align better with remaning of the website*/
+    .unbound{
+        width: 650px
+    }
 }
 
+/*mobile screen styling*/
 @media (max-width: 767px){
 
+    /*logo width reduced*/
+    .navbar_logo{
+        width: 100px;
+    }
+
+    /*left and right sections of the navbar hidden*/
+    .navbar_left, .navbar_right{
+        display: none;
+    }
+
+    /*buy button size and font adjusted for smaller screen*/
+    .buy_button{
+        font-size: 12px;
+        padding: 10px 30px;
+    }
+
+    /*heading of the 3D rotating slider adjusted for smaller screen*/
+    .banner_heading{
+        font-size: 32px;
+    }
+
+    /*margin adjusted for smaller screen*/
+    .banner{
+        margin-bottom: 150px;
+    }
+
+    /*main model image that is within the circle is hidden*/
+    .mainmodel img{
+        display: none;
+    }
+
+    /*slider adjusted for smaller screen*/
+    .banner .slider .item{
+        position: absolute;
+        inset: 0 0 0 0;
+        transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(250px);
+    }
+
+    /*buy now heading adjusted for smaller screen*/
+    .buy_now{
+        font-size: 32px;
+    }
+
+    /*products are now in a column. Each product taking up its own row*/
+    .products{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px; 
+        margin-bottom: 60px;
+        gap: 20px;
+        padding: 0 40px;
+    }
+
+    
+    .product{
+        width: 100%;
+        text-align: center;
+    }
+
+    /*putting the unbound section in a coulmn so its stacked for better readability on smaller screen*/
+    .unbound {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /*image is first*/
+    .unbound_image{
+        order: 1;
+    }
+
+    /*text is second*/
+    .unbound_text{
+        order: 2;
+        text-align: left;
+    }
+
+    /*unbound text section positioning*/
+    .unbound_text{
+        text-align: left;
+        padding: 0 35px;
+    }
+
+    /*heading styling*/
+    .unbound_text h1{
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    /*p tag reduced font size*/
+    .unbound_text p{
+        font-size: 16px;
+    
+    }
 }
