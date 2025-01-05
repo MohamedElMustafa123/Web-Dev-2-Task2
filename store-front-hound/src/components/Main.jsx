@@ -15,7 +15,7 @@ function Main(){
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.5 });  
         
         // Select all the headings and observe each heading
         document.querySelectorAll('.heading').forEach(heading => {
@@ -42,16 +42,16 @@ function Main(){
             {/*banner section that contains the 3d rotating image slider */}
             <div className="banner">
                 <div className = "slider" style={{'--quantity': '10'}}>
-                    <div className="item" style={{'--position': '1'}}><img src = "src/assets/images/model1.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '2'}}><img src = "src/assets/images/model2.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '3'}}><img src = "src/assets/images/model3.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '4'}}><img src = "src/assets/images/model4.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '5'}}><img src = "src/assets/images/model5.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '6'}}><img src = "src/assets/images/model6.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '7'}}><img src = "src/assets/images/model7.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '8'}}><img src = "src/assets/images/model8.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '9'}}><img src = "src/assets/images/model9.jpg" alt ="Model images"></img></div>
-                    <div className="item" style={{'--position': '10'}}><img src = "src/assets/images/model10.jpg" alt ="Model images"></img></div>
+                    <div className="item" style={{'--position': '1'}}><img src = "src/assets/images/model1.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '2'}}><img src = "src/assets/images/model2.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '3'}}><img src = "src/assets/images/model3.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '4'}}><img src = "src/assets/images/model4.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '5'}}><img src = "src/assets/images/model5.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '6'}}><img src = "src/assets/images/model6.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '7'}}><img src = "src/assets/images/model7.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '8'}}><img src = "src/assets/images/model8.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '9'}}><img src = "src/assets/images/model9.jpg" alt ="Model image"></img></div>
+                    <div className="item" style={{'--position': '10'}}><img src = "src/assets/images/model10.jpg" alt ="Model image"></img></div>
                 </div>
                 {/*Image that goes within the circle*/}
                 <div className="content">
@@ -70,12 +70,12 @@ function Main(){
                     <button className="buy_now_product_button">Buy Now</button>
                 </div>
                 <div className="product">
-                    <img src="src/assets/images/product2.png" alt="Product 1"></img>
+                    <img src="src/assets/images/product2.png" alt="Product 2"></img>
                     <p className="desc">Charcoal Grey</p>
                     <button className="buy_now_product_button">Buy Now</button>
                 </div>
                 <div className="product">
-                    <img src="src/assets/images/product3.png" alt="Product 1"></img>
+                    <img src="src/assets/images/product3.png" alt="Product 3"></img>
                     <p className="desc">French Beige</p>
                     <button className="buy_now_product_button">Buy Now</button>
                 </div>

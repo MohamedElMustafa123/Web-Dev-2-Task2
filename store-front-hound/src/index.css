@@ -353,6 +353,100 @@ footer p {
 }
 
 
+/*-----------------------------------------------SIGN UP AND LOG IN SCREEN STYLING------------------------------------*/
+
+.signup_in_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    /*background image is set here*/
+    background-image: url(../src/assets/images/signup-login-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/*applies a black overlay on the background image*/
+.signup_in_page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    z-index: 1;
+}
+
+/*container styling*/
+.signup_in_container{
+    z-index: 2;
+    background-color: black;
+    color: white;
+    font-family: "Roboto";
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    height: 380px;
+    box-shadow: 0 0 15px 5px rgba(225, 0, 0, 0.3); /*adds red glow around the container*/
+}
+
+/*text styling whtin the form*/
+.signup_in_container form{
+    text-align: left;
+    color: white;;
+}
+
+/*input styling within the form*/
+.signup_in_container input{
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom:1rem;
+    border: 1px solid grey; 
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/*button styling within the form*/
+.signup_in_button{
+    display: block;
+    margin: 0 auto;
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.6s ease, color 0.6s ease; /*smooth color change*/
+}
+
+/*on hover effect*/
+.signup_in_button:hover{
+    background-color: red;
+    color: black;
+}
+
+/*anchor tag styling within the form*/
+.signup_in_container a{
+    display: block;
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.6s ease;
+}
+
+/*on hover effect for anchor tag*/
+.signup_in_container a:hover{
+    color:red;
+}
+
 /*tablet screen styling*/
 @media (min-width: 768px) and (max-width: 1024px){
     /*unbound section width is changed to align better with remaning of the website*/
