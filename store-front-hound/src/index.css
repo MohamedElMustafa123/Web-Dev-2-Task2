@@ -90,6 +90,8 @@ main{
     height: auto;
 }
 
+
+
 /*buy button styling in the intro section of the website*/
 .buy_button{
     font-family: 'Roboto';
@@ -218,11 +220,19 @@ from the bottom and if you put a negative number you will be seeing it from up a
     text-align: center;
 }
 
-/*product image sizing*/
+/*product image sizing and hover effect*/
 .product img{
     width: 100%;
     height: auto;
+    transition: transform 0.5s ease-in-out;
 }
+
+/*on hover size of the product image is increased*/
+.product img:hover{
+    transform: scale(1.1);
+}
+
+
 
 /*product description styling*/
 .desc{
