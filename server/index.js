@@ -24,7 +24,7 @@ app.use(cors(
 ));
 
 //connecting to mongodb database
-mongoose.connect("mongodb+srv://nobimohamed262:mohamed123)@cluster1.bapor.mongodb.net/registrations_test?retryWrites=true&w=majority&appName=Cluster1");
+mongoose.connect("mongodb+srv://nobimohamed262:mohamed123%29@cluster1.bapor.mongodb.net/registrations_test?retryWrites=true&w=majority&appName=Cluster1");
 
 //handling POST request for logging in
 app.post("/login", (req, res) => {
