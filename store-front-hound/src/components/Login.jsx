@@ -12,11 +12,10 @@ function Login(){
     //used to naviage to a different page
     const navigate = useNavigate();
 
-axios.defaults.withCredentials = true;
     //function to handle the form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://web-dev-2-task2-api.vercel.app/login', {email, password })//sends a post request to the server with the email and password
+        axios.post('http://localhost:3001/login', {email, password })//sends a post request to the server with the email and password
             .then(result => {
                 console.log(result)
 
@@ -65,7 +64,7 @@ axios.defaults.withCredentials = true;
                     <button type="submit" className="signup_in_button">Log in</button>
                 </form>
                 {/*link to the signup page if the user doesnt have an account*/}
-                <Link to="/">Don't have an account? Sign up</Link>
+                <Link to="/register">Don't have an account? Sign up</Link>
             </div>
         </div>
     );

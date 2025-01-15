@@ -15,25 +15,11 @@ const app = express();
 app.use(express.json())
 
 //enable CORS for cross origin request
-const corsOptions = {
-    origin: "https://houndwebdev2.vercel.app", 
-    methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"], 
-    allowedHeaders: ["Content-Type", "Authorization"], 
-    credentials: true, 
-};
-
-app.use(cors(corsOptions));
-
-
-app.options('*', cors(corsOptions));
+app.use(cors());
 
 //connecting to mongodb database
-mongoose.connect("mongodb+srv://nobimohamed262:mohamed123%29@cluster1.bapor.mongodb.net/registrations_test?retryWrites=true&w=majority&appName=Cluster1");
+mongoose.connect("mongodb://127.0.0.1:27017/Registration");
 
-
-app.get("/", (req, res) => {
-    res.json("Hello");
-})
 //handling POST request for logging in
 app.post("/login", (req, res) => {
     const { email, password } = req.body;

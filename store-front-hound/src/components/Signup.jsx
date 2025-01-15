@@ -14,12 +14,12 @@ function Signup() {
     //used to naviage to a different page
     const navigate = useNavigate();
 
-axios.defaults.withCredentials = true;
+
 //function to handle the form submission
     const handleSubmit = (e) => {
         e.preventDefault();
         //send a post request to the server
-        axios.post('https://web-dev-2-task2-api.vercel.app/register', { name, email, password })
+        axios.post('http://localhost:3001/register', { name, email, password })
             .then(result => {console.log(result) //logs the result
                 navigate('/login');//redirects to the login page
 
