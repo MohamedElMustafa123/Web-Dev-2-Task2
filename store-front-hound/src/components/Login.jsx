@@ -12,6 +12,7 @@ function Login(){
     //used to naviage to a different page
     const navigate = useNavigate();
 
+axios.defaults.withCredentials = true;
     //function to handle the form submission
     const handleSubmit = (e) => {
         e.preventDefault();
