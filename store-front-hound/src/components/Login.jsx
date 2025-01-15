@@ -64,7 +64,7 @@ function Login(){
                     <button type="submit" className="signup_in_button">Log in</button>
                 </form>
                 {/*link to the signup page if the user doesnt have an account*/}
-                <Link to="/register">Don't have an account? Sign up</Link>
+                <Link to="/">Don't have an account? Sign up</Link>
             </div>
         </div>
     );
