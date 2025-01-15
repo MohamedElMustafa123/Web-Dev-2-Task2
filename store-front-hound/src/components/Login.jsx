@@ -21,7 +21,7 @@ function Login(){
 
                 // if the data returned is success it navigates to the home page
                 if (result.data === "Success") {
-                    navigate('/home');
+                    navigate('/');
                 }
 
             })
