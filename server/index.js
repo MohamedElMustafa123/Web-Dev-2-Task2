@@ -15,13 +15,17 @@ const app = express();
 app.use(express.json())
 
 //enable CORS for cross origin request
-app.use(cors(
-    {
-        origin: "https://houndwebdev2.vercel.app",
-        methods: ["POST", "GET", "PUT", "DELETE"],
-        credentials: true
-    }
-));
+const corsOptions = {
+    origin: "https://houndwebdev2.vercel.app", 
+    methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"], 
+    allowedHeaders: ["Content-Type", "Authorization"], 
+    credentials: true, 
+};
+
+app.use(cors(corsOptions));
+
+
+app.options('*', cors(corsOptions));
 
 //connecting to mongodb database
 mongoose.connect("mongodb+srv://nobimohamed262:mohamed123%29@cluster1.bapor.mongodb.net/registrations_test?retryWrites=true&w=majority&appName=Cluster1");
