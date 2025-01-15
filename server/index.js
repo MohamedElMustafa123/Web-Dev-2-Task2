@@ -45,7 +45,7 @@ app.post("/login", (req, res) => {
 });
 
 //handling POST request for registering
-app.post("/register", (req, res) => {
+app.post("/", (req, res) => {
     RegistrationModel.create(req.body)
     .then(registrations => res.json(registrations))
     .catch (err => res.json(err));
