@@ -19,7 +19,7 @@ axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault();
         //send a post request to the server
-        axios.post('https://web-dev-2-task2-api.vercel.app/register', { name, email, password })
+        axios.post('https://web-dev-2-task2-api.vercel.app', { name, email, password })
             .then(result => {console.log(result) //logs the result
                 navigate('/login');//redirects to the login page
 
