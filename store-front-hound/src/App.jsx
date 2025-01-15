@@ -14,13 +14,13 @@ function App() {
       <Routes>
         
         {/*Route for signup page */}
-        <Route path='/' element={<Signup/>}></Route>
+        <Route path='/register' element={<Signup/>}></Route>
 
         {/*Route for login page */}
         <Route path='/login' element={<Login/>}></Route>
 
         {/*Route for home page */}
-        <Route path='/home' element ={
+        <Route path='/' element ={
           <>
             <Header/> {/*Header component */}
             <Main/>{/*Main component */}
