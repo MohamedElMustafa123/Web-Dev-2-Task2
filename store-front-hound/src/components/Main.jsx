@@ -1,8 +1,25 @@
-
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 // main component of the website, containing the main content of the website.
 
-function Main(){
+// Import images
+import houndIntro from '../assets/images/hound-intro.jpg';  // Adjusted path
+import model1 from '../assets/images/model1.jpg';
+import model2 from '../assets/images/model2.jpg';
+import model3 from '../assets/images/model3.jpg';
+import model4 from '../assets/images/model4.jpg';
+import model5 from '../assets/images/model5.jpg';
+import model6 from '../assets/images/model6.jpg';
+import model7 from '../assets/images/model7.jpg';
+import model8 from '../assets/images/model8.jpg';
+import model9 from '../assets/images/model9.jpg';
+import model10 from '../assets/images/model10.jpg';
+import mainModel from '../assets/images/mainmodel.png';
+import product1 from '../assets/images/product1.jpg';
+import product2 from '../assets/images/product2.png';
+import product3 from '../assets/images/product3.png';
+import unboundImageSec from '../assets/images/unbound-image-sec.jpg';
+
+function Main() {
     // Function to observe the headings and add the 'visible' class when the heading is in the viewport
     const observeHeadings = () => {
         // Create a new IntersectionObserver
@@ -15,8 +32,8 @@ function Main(){
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });  
-        
+        }, { threshold: 0.5 });
+
         // Select all the headings and observe each heading
         document.querySelectorAll('.heading').forEach(heading => {
             observer.observe(heading);
@@ -27,75 +44,74 @@ function Main(){
     useEffect(() => {
         observeHeadings();  // Call the function to observe the headings
     }, []);  // Empty dependency array to run only once when the component mounts
-    
-    return(
+
+    return (
         <main>
-            {/*Container for intro image and buy button*/}
+            {/* Container for intro image and buy button */}
             <div className="image_container">
-                <img className="intro_image" src="src/assets/images/hound-intro.jpg" alt="Hound intro image"></img>
+                <img className="intro_image" src={houndIntro} alt="Hound intro image" />
                 <button className="buy_button">Buy</button>
             </div>
+
             {/* Heading of the banner section
             Code for this section was created following a guide from youtube.
             https://www.youtube.com/watch?v=yqaLSlPOUxM&ab_channel=LunDev*/}
             <h1 className="banner_heading heading">Be Apart Of Greatness</h1>
-            {/*banner section that contains the 3d rotating image slider */}
+
+            {/* banner section that contains the 3d rotating image slider */}
             <div className="banner">
-                <div className = "slider" style={{'--quantity': '10'}}>
-                    <div className="item" style={{'--position': '1'}}><img src = "src/assets/images/model1.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '2'}}><img src = "src/assets/images/model2.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '3'}}><img src = "src/assets/images/model3.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '4'}}><img src = "src/assets/images/model4.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '5'}}><img src = "src/assets/images/model5.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '6'}}><img src = "src/assets/images/model6.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '7'}}><img src = "src/assets/images/model7.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '8'}}><img src = "src/assets/images/model8.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '9'}}><img src = "src/assets/images/model9.jpg" alt ="Model image"></img></div>
-                    <div className="item" style={{'--position': '10'}}><img src = "src/assets/images/model10.jpg" alt ="Model image"></img></div>
-                </div>
-                {/*Image that goes within the circle*/}
-                <div className="content">
-                    <div className="mainmodel"><img src = "src/assets/images/mainmodel.png"></img></div>
+                <div className="slider" style={{ '--quantity': '10' }}>
+                    <div className="item" style={{ '--position': '1' }}><img src={model1} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '2' }}><img src={model2} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '3' }}><img src={model3} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '4' }}><img src={model4} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '5' }}><img src={model5} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '6' }}><img src={model6} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '7' }}><img src={model7} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '8' }}><img src={model8} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '9' }}><img src={model9} alt="Model image" /></div>
+                    <div className="item" style={{ '--position': '10' }}><img src={model10} alt="Model image" /></div>
                 </div>
 
+                {/* Image that goes within the circle */}
+                <div className="content">
+                    <div className="mainmodel"><img src={mainModel} alt="Main model" /></div>
+                </div>
             </div>
 
-            {/* Buy now product seciton*/}    
+            {/* Buy now product section */}
             <h1 className="buy_now heading">Buy Now</h1>
-            {/*Displaying products */}
+            {/* Displaying products */}
             <div className="products">
                 <div className="product">
-                    <img src="src/assets/images/product1.jpg" alt="Product 1"></img>
+                    <img src={product1} alt="Product 1" />
                     <p className="desc">Crimson Black</p>
                     <button className="buy_now_product_button">Buy Now</button>
                 </div>
                 <div className="product">
-                    <img src="src/assets/images/product2.png" alt="Product 2"></img>
+                    <img src={product2} alt="Product 2" />
                     <p className="desc">Charcoal Grey</p>
                     <button className="buy_now_product_button">Buy Now</button>
                 </div>
                 <div className="product">
-                    <img src="src/assets/images/product3.png" alt="Product 3"></img>
+                    <img src={product3} alt="Product 3" />
                     <p className="desc">French Beige</p>
                     <button className="buy_now_product_button">Buy Now</button>
                 </div>
             </div>
 
-            {/*Unbound ambition section. Holds image and texts */}
+            {/* Unbound ambition section. Holds image and texts */}
             <div className="unbound">
                 <div className="unbound_text">
-                    <h1 className='heading'>Unbound<br/> Ambition</h1>
+                    <h1 className="heading">Unbound<br /> Ambition</h1>
                     <p>On January 6th, we came together and penned the first chapter of this vision. We will stop at nothing to bring it into fruition. Witness our greatness</p>
                 </div>
                 <div className="unbound_image">
-                    <img src="src/assets/images/unbound-image-sec.jpg" alt="brand image"></img>
+                    <img src={unboundImageSec} alt="Brand image" />
                 </div>
             </div>
-
-            
         </main>
     );
-
 }
 
 export default Main;
