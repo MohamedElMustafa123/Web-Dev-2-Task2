@@ -17,7 +17,7 @@ app.use(express.json())
 //enable CORS for cross origin request
 app.use(cors(
     {
-        origin: [],
+        origin: ["https://houndwebdev2.vercel.app/"],
         methods: ["POST", "GET"],
         credentials: true
     }
