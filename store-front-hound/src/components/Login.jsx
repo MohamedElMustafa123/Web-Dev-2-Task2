@@ -15,7 +15,7 @@ function Login(){
     //function to handle the form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/login', {email, password })//sends a post request to the server with the email and password
+        axios.post('https://web-dev-2-task2-api.vercel.app/login', {email, password })//sends a post request to the server with the email and password
             .then(result => {
                 console.log(result)
 
