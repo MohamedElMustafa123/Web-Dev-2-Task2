@@ -26,6 +26,10 @@ app.use(cors(
 //connecting to mongodb database
 mongoose.connect("mongodb+srv://nobimohamed262:mohamed123%29@cluster1.bapor.mongodb.net/registrations_test?retryWrites=true&w=majority&appName=Cluster1");
 
+
+app.get("/", (req, res) => {
+    res.json("Hello");
+})
 //handling POST request for logging in
 app.post("/login", (req, res) => {
     const { email, password } = req.body;
