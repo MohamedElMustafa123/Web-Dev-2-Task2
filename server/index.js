@@ -15,10 +15,16 @@ const app = express();
 app.use(express.json())
 
 //enable CORS for cross origin request
-app.use(cors());
+app.use(cors(
+    {
+        origin: [],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 //connecting to mongodb database
-mongoose.connect("mongodb://127.0.0.1:27017/Registration");
+mongoose.connect("mongodb+srv://nobimohamed262:mohamed123)@cluster1.bapor.mongodb.net/registrations_test?retryWrites=true&w=majority&appName=Cluster1");
 
 //handling POST request for logging in
 app.post("/login", (req, res) => {
