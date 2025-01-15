@@ -1,4 +1,6 @@
 // Header component of the website, containing the navigation bar, logo, and location.
+
+import logo from '../assets/images/hound-logo.png';
 function Header() {
     return (
         <header>
@@ -10,7 +12,7 @@ function Header() {
                     <a href="#">Contact</a>
                 </div>
                 <div className="navbar_center">
-                    <img className="navbar_logo" src="src/assets/images/hound-logo.png" alt="Hound logo"/>
+                    <img className="navbar_logo" src={logo} alt="Hound logo"/>
                 </div>
                 <div className="navbar_right">
                     <span>United Arab Emirates | AED</span>
